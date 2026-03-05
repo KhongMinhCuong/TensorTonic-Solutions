@@ -6,5 +6,7 @@ def sigmoid(x):
     """
     # Write code help
     x=np.array(x)
-    return 1/(1+np.exp(-x))
+    return np.where(x>=0, 
+                    1/(1+np.exp(-x)), 
+                    np.exp(x)/(1+np.exp(x))) 
     pass
